@@ -52,45 +52,42 @@ class SimpleBattle:
 # ============================================================================
 # YOUR CLASSES TO IMPLEMENT (6 CLASSES TOTAL)
 # ============================================================================
-
 class Character:
     """
     Base class for all characters.
     This is the top of our inheritance hierarchy.
     """
-    
+
     def __init__(self, name, health, strength, magic):
         """Initialize basic character attributes"""
-        # TODO: Set the character's name, health, strength, and magic
-        # These should be stored as instance variables
-        pass
-        
+        self.name = name          # Character's name
+        self.health = health      # Health points (HP)
+        self.strength = strength  # Physical power for attacks
+        self.magic = magic        # Magical ability (unused here, but for later)
+
     def attack(self, target):
         """
         Basic attack method that all characters can use.
-        This method should:
         1. Calculate damage based on strength
         2. Apply damage to the target
         3. Print what happened
         """
-        # TODO: Implement basic attack
-        # Damage should be based on self.strength
-        # Use target.take_damage(damage) to apply damage
-        pass
-        
+        damage = self.strength
+        print(f"{self.name} attacks {target.name} for {damage} damage!")
+        target.take_damage(damage)
+
     def take_damage(self, damage):
-        """
-        Reduces this character's health by the damage amount.
-        Health should never go below 0.
-        """
-        # TODO: Implement taking damage
-        # Reduce self.health by damage amount
-        # Make sure health doesn't go below 0
-        pass
-        
+        """Reduce the character's health when attacked"""
+        self.health -= damage
+        if self.health <= 0:
+            self.health = 0
+            print(f"{self.name} has been defeated!")
+        else:
+            print(f"{self.name} now has {self.health} health remaining.")
+
     def display_stats(self):
-        """
-        Prints the character's current stats in a nice format.
+        print(f"{self.name} | Health: {self.health} | Strength: {self.strength} | Magic: {self.magic}")
+
         """
         # TODO: Print character's name, health, strength, and magic
         # Make it look nice with formatting
