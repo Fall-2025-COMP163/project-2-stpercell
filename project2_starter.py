@@ -85,8 +85,9 @@ class Character:
         else:
             print(f"{self.name} now has {self.health} health remaining.")
 
-
-
+    def display_stats(self):
+        #Show basic character stats
+        print(f"{self.name} | Health: {self.health} | Strength: {self.strength} | Magic: {self.magic}")
         """
         # TODO: Print character's name, health, strength, and magic
         # Make it look nice with formatting
@@ -117,6 +118,7 @@ class Warrior(Player):
         Create a warrior with appropriate stats.
         Warriors should have: high health, high strength, low magic
         """
+        super().__init__(name, "Warrior", health=120, strength=15, magic=5)
         # TODO: Call super().__init__() with warrior-appropriate stats
         # Suggested stats: health=120, strength=15, magic=5
         pass
@@ -129,12 +131,19 @@ class Warrior(Player):
         # TODO: Implement warrior attack
         # Should do more damage than basic attack
         # Maybe strength + 5 bonus damage?
+         bonus_damage = 5  # Extra physical damage
+        total_damage = self.strength + bonus_damage
+        print(f"{self.name} swings a mighty sword at {target.name} for {total_damage} damage!")
+        target.take_damage(total_damage)
         pass
         
     def power_strike(self, target):
         """
         Special warrior ability - a powerful attack that does extra damage.
         """
+        damage = self.strength * 2  # Double damage
+        print(f"{self.name} unleashes a POWER STRIKE on {target.name} for {damage} damage!! ⚔️")
+        target.take_damage(damage)
         # TODO: Implement power strike
         # Should do significantly more damage than regular attack
         pass
