@@ -95,9 +95,8 @@ class Character:
 
       
 class Player(Character):
+       #STarts player char
     def __init__(self, name, character_class, health, strength, magic):
-        #STarts player char
-        Calls the parent constructor and adds player-specific attributes.
         # Call the parent to set up name, health, strength, and magic. STuff basically
         super().__init__(name, health, strength, magic)
         # Store the character's class Warrior, Mage, Rogue
