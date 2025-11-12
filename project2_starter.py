@@ -131,7 +131,7 @@ class Warrior(Player):
         # TODO: Implement warrior attack
         # Should do more damage than basic attack
         # Maybe strength + 5 bonus damage?
-         bonus_damage = 5  # Extra physical damage
+        bonus_damage = 5  # Extra physical damage
         total_damage = self.strength + bonus_damage
         print(f"{self.name} swings a mighty sword at {target.name} for {total_damage} damage!")
         target.take_damage(total_damage)
