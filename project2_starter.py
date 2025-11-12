@@ -199,6 +199,8 @@ class Rogue(Player):
         """
         # TODO: Call super().__init__() with rogue-appropriate stats
         # Suggested stats: health=90, strength=12, magic=10
+        super().__init__(name, "Rogue", health=90, strength=12, magic=10)
+        self.last_attack_was_crit = False  # Track crit alternation
         pass
         
     def attack(self, target):
@@ -209,6 +211,17 @@ class Rogue(Player):
         # TODO: Implement rogue attack
         # Could add a chance for critical hit (double damage)
         # Hint: use random.randint(1, 10) and if result <= 3, it's a crit
+        # Alternate between normal and critical hits to avoid randomness
+        if self.last_attack_was_crit:
+            damage = self.strength
+            print(f"{self.name} swiftly attacks {target.name} for {damage} damage.")
+            self.last_attack_was_crit = False
+        else:
+            damage = self.strength * 2  # Critical hit = double damage
+            print(f"{self.name} lands a CRITICAL HIT on {target.name} for {damage} damage!!")
+            self.last_attack_was_crit = True
+        
+        target.take_damage(damage)
         pass
         
     def sneak_attack(self, target):
@@ -217,6 +230,9 @@ class Rogue(Player):
         """
         # TODO: Implement sneak attack
         # Should always do critical damage
+        damage = self.strength * 2  # Always double damage
+        print(f"{self.name} performs a SNEAK ATTACK on {target.name} for {damage} damage!! 🕶️")
+        target.take_damage(damage)
         pass
 
 class Weapon:
