@@ -43,11 +43,11 @@ class SimpleBattle:
         self.char2.display_stats()
         
         if self.char1.health > self.char2.health:
-            print(f"🏆 {self.char1.name} wins!")
+            print(f"{self.char1.name} wins!")
         elif self.char2.health > self.char1.health:
-            print(f"🏆 {self.char2.name} wins!")
+            print(f"{self.char2.name} wins!")
         else:
-            print("🤝 It's a tie!")
+            print("It's a tie!")
 
 # ============================================================================
 # YOUR CLASSES TO IMPLEMENT (6 CLASSES TOTAL)
@@ -153,12 +153,12 @@ class Mage(Player):
     Mage class - magical spellcaster.
     Inherits from Player.
     """
-    
     def __init__(self, name):
         """
         Create a mage with appropriate stats.
         Mages should have: low health, low strength, high magic
         """
+        super().__init__(name, "Mage", health=70, strength=5, magic=20)
         # TODO: Call super().__init__() with mage-appropriate stats
         # Suggested stats: health=80, strength=8, magic=20
         pass
@@ -170,6 +170,9 @@ class Mage(Player):
         """
         # TODO: Implement mage attack
         # Should use self.magic for damage calculation instead of strength
+        magic_damage = self.magic + 3  # Slight bonus magic damage
+        print(f"{self.name} casts a magic bolt at {target.name} for {magic_damage} damage!")
+        target.take_damage(magic_damage)
         pass
         
     def fireball(self, target):
@@ -178,6 +181,9 @@ class Mage(Player):
         """
         # TODO: Implement fireball spell
         # Should do magic-based damage with bonus
+        damage = self.magic * 2 + 5  # Big, flashy magical hit
+        print(f"{self.name} hurls a FIREBALL at {target.name} for {damage} damage!!")
+        target.take_damage(damage)
         pass
 
 class Rogue(Player):
