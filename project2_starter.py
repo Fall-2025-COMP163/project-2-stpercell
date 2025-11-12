@@ -90,17 +90,12 @@ class Character:
         """
         # TODO: Print character's name, health, strength, and magic
         # Make it look nice with formatting
+        """
         pass
 
       
 class Player(Character):
-    """
-    Base class for player characters.
-    Inherits from Character and adds player-specific features.
-    """
-
     def __init__(self, name, character_class, health, strength, magic):
-        """
         #STarts player char
         Calls the parent constructor and adds player-specific attributes.
         # Call the parent to set up name, health, strength, and magic. STuff basically
