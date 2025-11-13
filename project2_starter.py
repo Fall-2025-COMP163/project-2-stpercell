@@ -59,18 +59,17 @@ class Character:
     """
 
     def __init__(self, name, health, strength, magic):
-        """Initialize basic character attributes"""
         self.name = name          # Character's name
-        self.health = health      # Health points (HP)
+        self.health = health      # Hit points (HP)
         self.strength = strength  # Physical power for attacks
-        self.magic = magic        # Magical ability (unused here, but for later)
+        self.magic = magic        # Magical ability 
 
     def attack(self, target):
         """
         Basic attack method that all characters can use.
-        1. Calculate damage based on strength
-        2. Apply damage to the target
-        3. Print what happened
+        Calculate damage based on strength
+        Apply damage to the target
+        print what happened
         """
         damage = self.strength
         print(f"{self.name} attacks {target.name} for {damage} damage!")
@@ -87,7 +86,7 @@ class Character:
 
     def display_stats(self):
         #Show basic character stats
-        print(f"{self.name} | Health: {self.health} | Strength: {self.strength} | Magic: {self.magic}")
+        print(f"{self.name} , Health: {self.health} , Strength: {self.strength} , Magic: {self.magic}")
         """
         # TODO: Print character's name, health, strength, and magic
         # Make it look nice with formatting
@@ -231,7 +230,7 @@ class Rogue(Player):
         # TODO: Implement sneak attack
         # Should always do critical damage
         damage = self.strength * 2  # Always double damage
-        print(f"{self.name} performs a SNEAK ATTACK on {target.name} for {damage} damage!! 🕶️")
+        print(f"{self.name} performs a SNEAK ATTACK on {target.name} for {damage} damage!! ")
         target.take_damage(damage)
         pass
 
