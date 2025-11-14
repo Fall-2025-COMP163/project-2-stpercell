@@ -259,7 +259,7 @@ class Weapon:
 # ============================================================================
 # MAIN PROGRAM FOR TESTING (YOU CAN MODIFY THIS FOR TESTING)
 # ============================================================================
- if __name__ == "__main__":
+if __name__ == "__main__":
     # Create characters
     warrior = Warrior("Aragorn")
     mage = Mage("Gandalf")
