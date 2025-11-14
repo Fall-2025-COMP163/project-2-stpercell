@@ -71,8 +71,8 @@ class Character:
         Apply damage to the target
         print what happened
         """
-        damage = self.strength
-        print(f"{self.name} attacks {target.name} for {damage} damage!")
+        damage = self.strength #damage based of strengh attribute
+        print(f"{self.name} attacks {target.name} for {damage} damage!") #prints a statement based off attacks
         target.take_damage(damage)
 
     def take_damage(self, damage):
@@ -80,7 +80,7 @@ class Character:
         self.health -= damage
         if self.health <= 0:
             self.health = 0
-            print(f"{self.name} has been defeated!")
+            print(f"{self.name} has been defeated!") 
         else:
             print(f"{self.name} now has {self.health} health remaining.")
 
@@ -122,7 +122,7 @@ class Warrior(Player):
         # Suggested stats: health=120, strength=15, magic=5
         pass
         
-    def attack(self, target):
+    def attack(self, target):#overrides previous attack function
         """
         Override the basic attack to make it warrior-specific.
         Warriors should do extra physical damage.
@@ -136,7 +136,7 @@ class Warrior(Player):
         target.take_damage(total_damage)
         pass
         
-    def power_strike(self, target):
+    def power_strike(self, target):#Special warrior skill
         """
         Special warrior ability - a powerful attack that does extra damage.
         """
@@ -147,7 +147,7 @@ class Warrior(Player):
         # Should do significantly more damage than regular attack
         pass
 
-class Mage(Player):
+class Mage(Player):#subclass of player class
     """
     Mage class - magical spellcaster.
     Inherits from Player.
@@ -185,7 +185,7 @@ class Mage(Player):
         target.take_damage(damage)
         pass
 
-class Rogue(Player):
+class Rogue(Player):#Another subclass
     """
     Rogue class - quick and sneaky fighter.
     Inherits from Player.
@@ -257,11 +257,35 @@ class Weapon:
 # ============================================================================
 # MAIN PROGRAM FOR TESTING (YOU CAN MODIFY THIS FOR TESTING)
 # ============================================================================
+ if __name__ == "__main__":
+    # Create characters
+    warrior = Warrior("Aragorn")
+    mage = Mage("Gandalf")
 
+    # Optional: give weapons
+    sword = Weapon("Steel Sword", 5)
+    staff = Weapon("Wizard Staff", 4)
+
+    warrior.weapon = sword
+    mage.weapon = staff
+
+    # Run a battle
+    battle = SimpleBattle(warrior, mage)
+    battle.fight()
+#easy way to run code, just replace names and number with what you see fit.
 if __name__ == "__main__":
-    print("=== CHARACTER ABILITIES SHOWCASE ===")
-    print("Testing inheritance, polymorphism, and method overriding")
-    print("=" * 50)
+    warrior = Warrior("Uriel")
+    mage = Mage("Leviathan")
+    
+    sword = Weapon("Gods Blade", 50)
+    staff = Weapon("Sea's Wrath",65 )
+
+    warrior.weapon = sword
+    mage.weapon = staff
+
+    battle = SimpleBattle(warrior, mage)
+    battle.fight()
+   
     
     # TODO: Create one of each character type
     # warrior = Warrior("Sir Galahad")
