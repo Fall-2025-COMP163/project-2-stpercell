@@ -1,10 +1,12 @@
 """
 COMP 163 - Project 2: Character Abilities Showcase
-Name: [Your Name Here]
-Date: [Date]
+Name: [Shikel Percell]
+Date: [11/14/2025]
 
 AI Usage: [Document any AI assistance used]
 Example: AI helped with inheritance structure and method overriding concepts
+
+Mostly used ai to comprehend what I was supoosed to do and learn how to use classes correctly, also formatting
 """
 
 # ============================================================================
