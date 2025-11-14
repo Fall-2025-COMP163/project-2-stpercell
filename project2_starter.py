@@ -240,17 +240,24 @@ class Weapon:
     Characters can HAVE weapons (composition, not inheritance).
     """
     
-    def __init__(self, name, damage_bonus):
+      def __init__(self, name, damage_bonus):
         """
         Create a weapon with a name and damage bonus.
         """
-        # TODO: Store weapon name and damage bonus
+        self.name = name
+        self.damage_bonus = damage_bonus
         pass
         
-    def display_info(self):
-        """
-        Display information about this weapon.
-        """
+      def display_stats(self):
+          print(f"--- {self.name}'s Stats ---")
+          print(f" Health:   {self.health}")
+          print(f" Strength: {self.strength}")
+          print(f" Magic:    {self.magic}")
+
+          if self.weapon:
+              print(f" Weapon:   {self.weapon.name} (+{self.weapon.damage_bonus})")
+          else:
+              print(f" Weapon:   None")
         # TODO: Print weapon name and damage bonus
         pass
 
