@@ -145,3 +145,15 @@ Feel free to add your own creative touches for bonus points:
 - Additional character classes beyond the three required
 - More weapon types with different properties
 - Enhanced special abilities with unique effects
+
+
+A.I Usage
+I mostly used ai to comprehend and learn what I was supposed to do, Other than that everything was relativly simple and easy to code and figure out.
+
+Challenges with the code
+Starting out in computer science, building this code pushed me through real struggles that actually made me better. Grasping how parent and child classes connect felt tricky at first. Sure, it sounded clear during class - but using it across linked types like Character, Player, Warrior, Mage, or Rogue? Way tougher. Figuring out what stayed up top in the main class, versus what changed down below in each role, took serious thought.
+
+
+
+
+
