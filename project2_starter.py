@@ -248,16 +248,9 @@ class Weapon:
         self.damage_bonus = damage_bonus
         pass
         
-    def display_stats(self):
-        print(f"--- {self.name}'s Stats ---")
-        print(f" Health:   {self.health}")
-        print(f" Strength: {self.strength}")
-        print(f" Magic:    {self.magic}")
-
-        if self.weapon:
-            print(f" Weapon:   {self.weapon.name} (+{self.weapon.damage_bonus})")
-        else:
-            print(f" Weapon:   None")
+    def display_info(self):
+        """Display weapon information."""
+        print(f"Weapon: {self.name} (Bonus Damage: +{self.damage_bonus})")
         # TODO: Print weapon name and damage bonus
         pass
 
